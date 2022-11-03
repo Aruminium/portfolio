@@ -4,12 +4,12 @@ import {Box, Typography } from "@mui/material";
 const Footer = React.memo(() => {
   return (
       <Box
-        height="100px"
+        height="5px"
         margin="auto"
         width="100%"
         color="primary"
         textAlign="center"
-        lineHeight="100px"
+        lineHeight="50px"
       >
         <Typography variant="caption" sx={{ opacity: 0.5 }}>
           Copyright Bana7

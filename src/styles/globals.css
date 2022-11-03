@@ -57,10 +57,35 @@ a {
   background: black;
 }
 
-.avatar {
+.logo {
   border-radius: 50%;
 }
 
 .card {
   background-color: #89b6de;
+}
+
+.fuwafuwa {
+  animation: fuwafuwa 3s infinite ease-in-out 0s alternate;
+  display: inline-block;
+  transition: 1.5s ease-in-out;
+  width: 70px;
+  height: 70px;
+  margin-top: 15px;
+}
+ 
+@keyframes fuwafuwa {
+  0% {
+    transform:translate(0, 0) rotate(-7deg);
+  }
+  50% {
+    transform:translate(0, -7px) rotate(0deg);
+  }
+  100% {
+    transform:translate(0, 0) rotate(7deg);
+  }
+}
+
+.typography::first-letter {
+  font-size: 48px;
 }
