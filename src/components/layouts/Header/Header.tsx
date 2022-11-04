@@ -34,7 +34,7 @@ const headerItemList: headerItemType[] = [
   },
 ];
 
-const Header = React.memo(() => {
+const Header = () => {
   return (
     <Box height={"100px"}>
       <Grid container alignItems="center">
@@ -65,6 +65,6 @@ const Header = React.memo(() => {
       </Grid>
     </Box>
   );
-});
+};
 
 export default Header;
