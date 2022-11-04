@@ -1,21 +1,15 @@
 import type { NextPage } from "next";
 import Layout from "components/layouts/Layout/Layout";
 import HeadlineTypography from "components/elements/Typography/HeadlineTypography";
-import {
-  Box,
-  Grid,
-  Icon,
-  IconButton,
-  Tooltip,
-  Typography,
-} from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import Image from "next/image";
 import logo from "images/logo.jpg";
-import { GitHub, LinkedIn, Twitter } from "@mui/icons-material";
-import Link from "next/link";
 import TwitterButton from "components/elements/Button/TwitterButton";
 import LinkedInButton from "components/elements/Button/LinkedInButton";
 import GitHubButton from "components/elements/Button/GitHubButton";
+import { GitHubButtonProps } from "components/types/GitHubProps";
+
+const gitHubProps: GitHubButtonProps = {title: "GitHub", href: "https://github.com/Aruminium"}
 
 const Home: NextPage = () => {
   return (
@@ -67,7 +61,7 @@ const Home: NextPage = () => {
           marginY={1}
         >
           <TwitterButton />
-          <GitHubButton title="GitHub" href="https://github.com/Aruminium" />
+          <GitHubButton gitHubButtonProps={gitHubProps} />
           <LinkedInButton />
         </Grid>
       </Box>
