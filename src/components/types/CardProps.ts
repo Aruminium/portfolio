@@ -5,5 +5,5 @@ export type CardProps = {
   summary: string;
   component: ElementType;
   alt: string;
-  src: string;
+  src: any;
 };

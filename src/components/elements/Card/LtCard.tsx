@@ -1,16 +1,17 @@
 import styled from "@emotion/styled";
-import { BorderAll } from "@mui/icons-material";
 import {
   Card,
   CardActions,
   CardContent,
   CardMedia,
+  Divider,
+  Grid,
   Typography,
 } from "@mui/material";
 import { Box } from "@mui/system";
-import { GitHubCardProps } from "components/types/GitHubCardProps";
+import { LtCardProps } from "components/types/LtCardProps";
 import Image from "next/image";
-import GitHubButton from "../Button/GitHubButton";
+import BookButton from "../Button/BookButton";
 
 const CardStyled = styled(Card)(() => ({
   TransitionEvent: {
@@ -21,32 +22,22 @@ const CardStyled = styled(Card)(() => ({
   },
 }));
 
-const GitHubCard: React.FC<GitHubCardProps> = ({
-  cardProps,
-  gitHubButtonProps,
-  sx,
-}) => {
+const LtCard: React.FC<LtCardProps> = ({ href, cardProps, sx }) => {
   return (
     <Box padding={"40px 40px"}>
       <CardStyled sx={sx}>
-        {cardProps.component == "image" ? (
+        <Grid container alignContent="center" justifyContent="center">
           <CardMedia component={cardProps.component}>
             <Image
               loading="lazy"
               src={cardProps.src}
               alt={cardProps.alt}
               height="300"
-              width="100"
+              width="600"
             />
           </CardMedia>
-        ) : (
-          <CardMedia
-            height="300"
-            component={cardProps.component}
-            alt={cardProps.alt}
-            src={cardProps.src}
-          />
-        )}
+        </Grid>
+        <Divider />
         <CardContent>
           <Typography
             gutterBottom
@@ -67,11 +58,11 @@ const GitHubCard: React.FC<GitHubCardProps> = ({
           </Typography>
         </CardContent>
         <CardActions>
-          <GitHubButton gitHubButtonProps={gitHubButtonProps} />
+          <BookButton href={href} />
         </CardActions>
       </CardStyled>
     </Box>
   );
 };
 
-export default GitHubCard;
+export default LtCard;
